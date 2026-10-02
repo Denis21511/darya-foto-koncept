@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дарья — фотограф в Сиде</title>
+<meta name="description" content="Фотограф в Сиде, Махмутларе и Аланье. Love story, парные, семейные и женские фотосессии у моря и в античном Сиде. Опыт больше 8 лет.">
+<meta property="og:title" content="Дарья — фотограф в Сиде">
+<meta property="og:description" content="Love story, парные, семейные и женские фотосессии в Сиде и Аланье.">
+<meta property="og:image" content="img/couple-columns.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f2ec; --bg2:#efe6dc; --ink:#2b2420; --muted:#7a6d64; --line:#e0d4c7;
+    --accent:#b08463; --accent-ink:#fff; --wa:#25d366;
+    --serif:"Cormorant Garamond", Georgia, serif; --sans:"Manrope", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1}
+  h2{font-size:clamp(34px,5vw,52px);margin-bottom:18px}
+  .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+  .lead{color:var(--muted);max-width:560px}
+  section{padding:96px 0}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:15px;transition:transform .2s, background .2s}
+  .btn:hover{transform:translateY(-2px);background:#000}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:#fff}
+  .btn svg{width:18px;height:18px}
+
+  /* header */
+  header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s, box-shadow .3s}
+  header.solid{background:rgba(247,242,236,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--serif);font-size:26px;text-decoration:none;color:#fff;transition:color .3s}
+  .logo small{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-left:8px;opacity:.8}
+  header.solid .logo{color:var(--ink)}
+  .nav ul{display:flex;gap:30px;list-style:none}
+  .nav ul a{text-decoration:none;color:#fff;font-size:14px;transition:color .3s}
+  header.solid .nav ul a{color:var(--ink)}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .lang{display:flex;border:1px solid rgba(255,255,255,.6);border-radius:999px;overflow:hidden}
+  header.solid .lang{border-color:var(--line)}
+  .lang button{background:none;border:0;padding:6px 11px;font:600 12px var(--sans);color:#fff;cursor:pointer}
+  header.solid .lang button{color:var(--ink)}
+  .lang button.on{background:#fff;color:var(--ink)}
+  header.solid .lang button.on{background:var(--ink);color:#fff}
+
+  /* hero */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:0 0 90px}
+  .hero-bg{position:absolute;inset:0;background:url(img/couple-columns.jpg) center 30%/cover}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,10,.4) 0%,rgba(20,14,10,.05) 35%,rgba(20,14,10,.55) 60%,rgba(20,14,10,.8) 100%)}
+  .hero .wrap{position:relative;width:100%}
+  .hero .eyebrow{color:#f0dcc8}
+  .hero h1{font-size:clamp(48px,8.5vw,104px);max-width:900px;margin-bottom:22px}
+  .hero h1 em{font-style:italic}
+  .hero p{max-width:520px;font-size:18px;opacity:.92;margin-bottom:34px}
+  .hero .btn{background:#fff;color:var(--ink)}
+  .hero .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .facts{display:flex;gap:44px;margin-top:56px;flex-wrap:wrap}
+  .facts b{display:block;font-family:var(--serif);font-size:38px;font-weight:400;line-height:1}
+  .facts span{font-size:13px;opacity:.8}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+  .about-img{position:relative}
+  .about-img img{border-radius:4px;aspect-ratio:4/5;object-fit:cover;width:100%}
+  .about-img .tag{position:absolute;right:-18px;bottom:36px;background:#fff;padding:16px 20px;border-radius:4px;box-shadow:0 10px 30px rgba(43,36,32,.12);font-size:13px;color:var(--muted)}
+  .about-img .tag b{display:block;font-family:var(--serif);font-size:28px;color:var(--ink);font-weight:400}
+  .about p+p{margin-top:14px}
+  .about .lead{margin-bottom:24px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .chips span{border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:13px;background:#fff}
+
+  /* portfolio */
+  .port-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+  .filters{display:flex;gap:8px;flex-wrap:wrap}
+  .filters button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font:500 14px var(--sans);cursor:pointer;color:var(--ink)}
+  .filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .grid{columns:3 200px;column-gap:14px}
+  .grid figure{break-inside:avoid;margin-bottom:14px;overflow:hidden;border-radius:4px;cursor:zoom-in;position:relative}
+  .grid img{width:100%;transition:transform .6s ease}
+  .grid figure:hover img{transform:scale(1.04)}
+  .grid figure.hide{display:none}
+  .port-more{margin-top:34px;text-align:center}
+
+  /* services */
+  .services{background:var(--bg2)}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+  .card{background:#fff;border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+  .card img{aspect-ratio:4/5;object-fit:cover;width:100%}
+  .card div{padding:22px 22px 26px;display:flex;flex-direction:column;flex:1}
+  .card h3{font-size:26px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:14px;flex:1}
+  .card .price{margin-top:16px;font-weight:600;font-size:14px;color:var(--accent)}
+
+  /* included */
+  .incl{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:44px}
+  .incl div{border-top:1px solid var(--ink);padding-top:18px}
+  .incl b{font-family:var(--serif);font-size:24px;font-weight:400;display:block;margin-bottom:6px}
+  .incl p{color:var(--muted);font-size:14px}
+
+  /* locations */
+  .locs{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:260px 260px;gap:14px;margin-top:44px}
+  .loc{position:relative;border-radius:4px;overflow:hidden;color:#fff}
+  .loc:first-child{grid-row:span 2}
+  .loc img{width:100%;height:100%;object-fit:cover}
+  .loc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.6))}
+  .loc span{position:absolute;left:20px;bottom:18px;z-index:1;font-family:var(--serif);font-size:26px}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:44px;counter-reset:s}
+  .step{counter-increment:s}
+  .step::before{content:"0" counter(s);font-family:var(--serif);font-size:44px;color:var(--accent);display:block;line-height:1;margin-bottom:12px}
+  .step b{display:block;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:14px}
+
+  /* faq */
+  .faq{max-width:820px}
+  details{border-bottom:1px solid var(--line);padding:20px 0}
+  summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:24px;display:flex;justify-content:space-between;gap:20px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--sans);font-weight:300;font-size:26px;line-height:1;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{color:var(--muted);margin-top:10px;max-width:680px}
+
+  /* contact */
+  .contact{background:var(--ink);color:#fff;text-align:center;position:relative;overflow:hidden}
+  .contact h2{font-size:clamp(40px,6vw,68px)}
+  .contact .lead{color:#cbbdb1;margin:0 auto 34px}
+  .contact .btn{background:var(--wa);color:#fff}
+  .contact .btn.ghost{background:transparent;border-color:rgba(255,255,255,.5);color:#fff}
+  .contact .hero-actions{justify-content:center}
+  .socials{display:flex;justify-content:center;gap:26px;margin-top:40px;font-size:14px;flex-wrap:wrap}
+  .socials a{color:#cbbdb1;text-decoration:none}
+  .socials a:hover{color:#fff}
+  footer{background:var(--ink);color:#8e7f74;font-size:13px;text-align:center;padding:0 0 30px}
+
+  /* floating wa */
+  .fab{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s}
+  .fab:hover{transform:scale(1.07)}
+  .fab svg{width:30px;height:30px;fill:#fff}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;background:rgba(15,11,8,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:30px}
+  .lb.open{display:flex}
+  .lb img{max-height:92vh;max-width:92vw;object-fit:contain}
+  .lb button{position:absolute;background:none;border:0;color:#fff;font-size:40px;cursor:pointer;padding:10px 18px;line-height:1}
+  .lb .x{top:10px;right:10px}
+  .lb .prev{left:6px;top:50%;transform:translateY(-50%)}
+  .lb .next{right:6px;top:50%;transform:translateY(-50%)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:960px){
+    .nav ul{display:none}
+    .about{grid-template-columns:1fr;gap:40px}
+    .about-img .tag{right:12px}
+    .cards,.incl,.steps{grid-template-columns:1fr 1fr}
+    .locs{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px}
+    .loc:first-child{grid-row:auto;grid-column:span 2}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 16px}
+    section{padding:70px 0}
+    .logo small{display:none}
+    .cards,.incl,.steps{grid-template-columns:1fr}
+    .locs{grid-template-columns:1fr;grid-template-rows:repeat(5,220px)}
+    .loc:first-child{grid-column:auto}
+    .facts{gap:28px}
+    .hero{padding-bottom:60px}
+    .hero-actions .btn{width:100%;justify-content:center}
+    .grid{columns:2;column-gap:8px}
+    .grid figure{margin-bottom:8px}
+  }
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="logo">Дарья <small data-i="logoSub">фотограф</small></a>
+    <ul>
+      <li><a href="#portfolio" data-i="navPort">Портфолио</a></li>
+      <li><a href="#services" data-i="navServ">Съёмки</a></li>
+      <li><a href="#locations" data-i="navLoc">Локации</a></li>
+      <li><a href="#faq" data-i="navFaq">Вопросы</a></li>
+      <li><a href="#contact" data-i="navCont">Контакты</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang"><button data-lang="ru" class="on">RU</button><button data-lang="tr">TR</button></div>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="eyebrow" data-i="heroEyebrow">Сиде · Махмутлар · Аланья</div>
+    <h1 data-i="heroTitle">Фотограф в Сиде.<br><em>Ваши лучшие кадры</em> у моря</h1>
+    <p data-i="heroText">Love story, парные, семейные и женские фотосессии среди античных колонн, на набережной и у моря. Помогу с позированием и подберу локацию под свет.</p>
+    <div class="hero-actions">
+      <a class="btn wa-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg><span data-i="ctaBook">Записаться в WhatsApp</span></a>
+      <a class="btn ghost" href="#portfolio" data-i="ctaPort">Смотреть портфолио</a>
+    </div>
+    <div class="facts">
+      <div><b>8+</b><span data-i="fact1">лет снимаю</span></div>
+      <div><b>3</b><span data-i="fact2">города: Сиде, Махмутлар, Аланья</span></div>
+      <div><b>4</b><span data-i="fact3">вида съёмок: пары, семьи, портреты, студия</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="about-img reveal">
+      <img src="img/darya.jpg" alt="Фотограф Дарья с камерой" loading="lazy">
+      <div class="tag"><b>8+ лет</b><span data-i="aboutTag">в фотографии</span></div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow" data-i="aboutEyebrow">Обо мне</div>
+      <h2 data-i="aboutTitle">Привет, я Дарья</h2>
+      <p class="lead" data-i="aboutLead">Фотограф с опытом больше 8 лет. Раньше снимала в Екатеринбурге, теперь живу в Турции и снимаю в Сиде, Махмутларе и Аланье.</p>
+      <p data-i="aboutP1">Люблю естественные кадры: тёплый свет, море, античные колонны и живые эмоции. На съёмке подскажу, как встать и куда смотреть, — даже если вы никогда раньше не позировали.</p>
+      <p data-i="aboutP2">Сама обрабатываю каждый кадр: мягкая ретушь, чистый цвет, без «пластиковой» кожи.</p>
+      <div class="chips">
+        <span data-i="chip1">Love story</span><span data-i="chip2">Парные съёмки</span><span data-i="chip3">Семейные</span><span data-i="chip4">Женские портреты</span><span data-i="chip5">Студия</span><span data-i="chip6">Ретушь</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" style="padding-top:0">
+  <div class="wrap">
+    <div class="port-head reveal">
+      <div>
+        <div class="eyebrow" data-i="portEyebrow">Портфолио</div>
+        <h2 style="margin:0" data-i="portTitle">Свежие съёмки</h2>
+      </div>
+      <div class="filters">
+        <button class="on" data-f="all" data-i="fAll">Все</button>
+        <button data-f="couple" data-i="fCouple">Пары</button>
+        <button data-f="portrait" data-i="fPortrait">Портреты</button>
+        <button data-f="studio" data-i="fStudio">Студия</button>
+      </div>
+    </div>
+    <div class="grid">
+      <figure data-c="couple"><img src="img/couple-ruins.jpg" alt="Парная фотосессия в античном Сиде" loading="lazy"></figure>
+      <figure data-c="portrait"><img src="img/woman-ruins.jpg" alt="Женская фотосессия среди колонн в Сиде" loading="lazy"></figure>
+      <figure data-c="couple"><img src="img/couple-sea.jpg" alt="Love story на скалах у моря" loading="lazy"></figure>
+      <figure data-c="couple"><img src="img/couple-hands.jpg" alt="Детали: руки пары" loading="lazy"></figure>
+      <figure data-c="studio"><img src="img/studio-portrait.jpg" alt="Студийный портрет" loading="lazy"></figure>
+      <figure data-c="couple"><img src="img/couple-walk.jpg" alt="Прогулка по набережной Сиде" loading="lazy"></figure>
+      <figure data-c="portrait"><img src="img/portrait-boho.jpg" alt="Женский портрет в бохо-стиле" loading="lazy"></figure>
+      <figure data-c="portrait"><img src="img/man-ruins.jpg" alt="Мужской портрет в античном Сиде" loading="lazy"></figure>
+      <figure data-c="couple"><img src="img/couple-columns.jpg" alt="Пара у колонн храма Аполлона" loading="lazy"></figure>
+      <figure data-c="studio"><img src="img/studio.jpg" alt="Фотостудия" loading="lazy"></figure>
+    </div>
+    <div class="port-more reveal"><a class="btn ghost" href="https://instagram.com/your_photopartner" target="_blank" rel="noopener" data-i="portMore">Больше работ в Instagram</a></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow" data-i="servEyebrow">Фотосессии</div>
+      <h2 data-i="servTitle">Какие съёмки я провожу</h2>
+      <p class="lead" data-i="servLead">Точную стоимость и свободные даты подскажу в WhatsApp — зависит от длительности, локации и количества людей.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><img src="img/couple-sea.jpg" alt="" loading="lazy"><div><h3 data-i="s1t">Love story</h3><p data-i="s1p">Для пар в отпуске, к годовщине или помолвке. Море, закат, лёгкие прогулки.</p><span class="price" data-i="priceAsk">Стоимость — по запросу</span></div></div>
+      <div class="card reveal"><img src="img/couple-columns.jpg" alt="" loading="lazy"><div><h3 data-i="s2t">Парная в античном Сиде</h3><p data-i="s2p">Колонны храма Аполлона и древние руины — самые атмосферные кадры Сиде.</p><span class="price" data-i="priceAsk">Стоимость — по запросу</span></div></div>
+      <div class="card reveal"><img src="img/woman-ruins.jpg" alt="" loading="lazy"><div><h3 data-i="s3t">Женская фотосессия</h3><p data-i="s3p">Для себя, для блога или в подарок. Помогу с образом и позированием.</p><span class="price" data-i="priceAsk">Стоимость — по запросу</span></div></div>
+      <div class="card reveal"><img src="img/studio-portrait.jpg" alt="" loading="lazy"><div><h3 data-i="s4t">Семейная и студийная</h3><p data-i="s4p">Семьи с детьми на природе или в студии — спокойно и без спешки.</p><span class="price" data-i="priceAsk">Стоимость — по запросу</span></div></div>
+    </div>
+    <div class="incl">
+      <div class="reveal"><b data-i="i1t">Помощь с позированием</b><p data-i="i1p">Подскажу каждое движение — кадры получаются естественными.</p></div>
+      <div class="reveal"><b data-i="i2t">Подбор локации</b><p data-i="i2p">Выберу место и время под мягкий свет и без толп туристов.</p></div>
+      <div class="reveal"><b data-i="i3t">Авторская обработка</b><p data-i="i3p">Цвет и ретушь в моём стиле — тёплые, чистые кадры.</p></div>
+      <div class="reveal"><b data-i="i4t">Онлайн-галерея</b><p data-i="i4p">Готовые фото присылаю ссылкой — удобно скачать и поделиться.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="locations">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow" data-i="locEyebrow">Локации</div>
+      <h2 data-i="locTitle">Где снимаем</h2>
+      <p class="lead" data-i="locLead">Знаю места, где красиво в любое время дня. Можно снять и у вашего отеля.</p>
+    </div>
+    <div class="locs">
+      <div class="loc reveal"><img src="img/couple-ruins.jpg" alt="" loading="lazy"><span data-i="l1">Храм Аполлона, Сиде</span></div>
+      <div class="loc reveal"><img src="img/couple-walk.jpg" alt="" loading="lazy"><span data-i="l2">Старый город</span></div>
+      <div class="loc reveal"><img src="img/couple-sea.jpg" alt="" loading="lazy"><span data-i="l3">Скалы у моря</span></div>
+      <div class="loc reveal"><img src="img/man-ruins.jpg" alt="" loading="lazy"><span data-i="l4">Античные руины</span></div>
+      <div class="loc reveal"><img src="img/studio.jpg" alt="" loading="lazy"><span data-i="l5">Студия</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow" data-i="stepsEyebrow">Как это работает</div>
+      <h2 data-i="stepsTitle">От заявки до готовых фото</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><b data-i="st1t">Пишете в WhatsApp</b><p data-i="st1p">Расскажите, какую съёмку хотите и на какие даты.</p></div>
+      <div class="step reveal"><b data-i="st2t">Выбираем дату и место</b><p data-i="st2p">Подберу локацию и время с лучшим светом, подскажу с образами.</p></div>
+      <div class="step reveal"><b data-i="st3t">Съёмка</b><p data-i="st3p">Легко и без напряжения — я веду вас по всей съёмке.</p></div>
+      <div class="step reveal"><b data-i="st4t">Готовые фото</b><p data-i="st4p">Получаете обработанные кадры онлайн-галереей.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow" data-i="faqEyebrow">Вопросы</div>
+      <h2 data-i="faqTitle">Частые вопросы</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary data-i="q1">Я никогда не позировал(а). Получится?</summary><p data-i="a1">Да. Большинство моих клиентов снимаются впервые. Я подсказываю каждое движение, а самые живые кадры получаются между позами.</p></details>
+      <details><summary data-i="q2">Когда лучше снимать?</summary><p data-i="a2">Летом — рано утром или за 1,5–2 часа до заката: мягкий свет и меньше туристов. Точное время подберу под вашу локацию.</p></details>
+      <details><summary data-i="q3">Можно приехать к нашему отелю?</summary><p data-i="a3">Да, снимаю в Сиде, Махмутларе и Аланье, в том числе на территории отелей, если это разрешено.</p></details>
+      <details><summary data-i="q4">Что надеть?</summary><p data-i="a4">Лучше всего смотрятся светлые однотонные вещи: белый, бежевый, пастель. Перед съёмкой пришлю подсказки по образам.</p></details>
+      <details><summary data-i="q5">Как забронировать дату?</summary><p data-i="a5">Напишите в WhatsApp — подскажу свободные даты и стоимость, и закрепим за вами время.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#d9b99c" data-i="contEyebrow">Запись</div>
+    <h2 data-i="contTitle">Давайте снимем вашу историю</h2>
+    <p class="lead" data-i="contLead">Напишите в WhatsApp — отвечу, подскажу свободные даты и помогу выбрать локацию.</p>
+    <div class="hero-actions">
+      <a class="btn wa-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg><span>+90 536 570 90 75</span></a>
+      <a class="btn ghost" href="https://instagram.com/your_photopartner" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="socials">
+      <a href="https://instagram.com/your_photopartner" target="_blank" rel="noopener">@your_photopartner</a>
+      <a href="https://vk.com/your_photopartner" target="_blank" rel="noopener">VK</a>
+      <a href="tel:+905365709075">+90 536 570 90 75</a>
+      <span data-i="area">Сиде · Махмутлар · Аланья</span>
+    </div>
+  </div>
+</section>
+<footer><span data-i="foot">© 2026 Дарья — фотограф в Сиде</span></footer>
+
+<a class="fab wa-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+
+<div class="lb" id="lb"><button class="x" aria-label="Закрыть">×</button><button class="prev" aria-label="Назад">‹</button><img alt=""><button class="next" aria-label="Вперёд">›</button></div>
+
+<script>
+const WA = '905365709075';
+const T = {
+  tr: {
+    logoSub:'fotoğrafçı', navPort:'Portfolyo', navServ:'Çekimler', navLoc:'Lokasyonlar', navFaq:'Sorular', navCont:'İletişim',
+    heroEyebrow:'Side · Mahmutlar · Alanya',
+    heroTitle:'Side\'de fotoğrafçı.<br><em>En güzel kareleriniz</em> deniz kenarında',
+    heroText:'Antik sütunlar arasında, sahilde ve deniz kenarında love story, çift, aile ve kadın fotoğraf çekimleri. Poz vermenize yardımcı olur, ışığa göre en iyi yeri seçerim.',
+    ctaBook:'WhatsApp\'tan randevu al', ctaPort:'Portfolyoya bak',
+    fact1:'yıllık deneyim', fact2:'şehir: Side, Mahmutlar, Alanya', fact3:'çekim türü: çift, aile, portre, stüdyo',
+    aboutTag:'fotoğrafçılıkta', aboutEyebrow:'Hakkımda', aboutTitle:'Merhaba, ben Darya',
+    aboutLead:'8 yılı aşkın deneyime sahip fotoğrafçıyım. Daha önce Yekaterinburg\'da çekim yapıyordum, şimdi Türkiye\'de yaşıyor ve Side, Mahmutlar ve Alanya\'da çekiyorum.',
+    aboutP1:'Doğal kareleri seviyorum: sıcak ışık, deniz, antik sütunlar ve gerçek duygular. Daha önce hiç poz vermemiş olsanız bile çekim boyunca size yol gösteririm.',
+    aboutP2:'Her kareyi kendim düzenliyorum: yumuşak rötuş, temiz renkler, doğal cilt.',
+    chip1:'Love story', chip2:'Çift çekimi', chip3:'Aile', chip4:'Kadın portresi', chip5:'Stüdyo', chip6:'Rötuş',
+    portEyebrow:'Portfolyo', portTitle:'Son çekimler', fAll:'Tümü', fCouple:'Çiftler', fPortrait:'Portreler', fStudio:'Stüdyo', portMore:'Instagram\'da daha fazlası',
+    servEyebrow:'Fotoğraf çekimleri', servTitle:'Hangi çekimleri yapıyorum', servLead:'Kesin fiyat ve müsait tarihler için WhatsApp\'tan yazın — süreye, lokasyona ve kişi sayısına göre değişir.',
+    s1t:'Love story', s1p:'Tatildeki çiftler, yıldönümü veya nişan için. Deniz, gün batımı, keyifli yürüyüşler.',
+    s2t:'Antik Side\'de çift çekimi', s2p:'Apollon Tapınağı\'nın sütunları ve antik kalıntılar — Side\'nin en etkileyici kareleri.',
+    s3t:'Kadın fotoğraf çekimi', s3p:'Kendiniz için, blog için ya da hediye olarak. Stil ve poz konusunda yardımcı olurum.',
+    s4t:'Aile ve stüdyo', s4p:'Çocuklu aileler için doğada veya stüdyoda — sakin ve acele etmeden.',
+    priceAsk:'Fiyat — sorunuz',
+    i1t:'Poz desteği', i1p:'Her hareketi gösteririm — kareler doğal çıkar.',
+    i2t:'Lokasyon seçimi', i2p:'Yumuşak ışık ve kalabalıksız yer ve saat seçerim.',
+    i3t:'Özgün düzenleme', i3p:'Kendi tarzımda renk ve rötuş — sıcak, temiz kareler.',
+    i4t:'Online galeri', i4p:'Hazır fotoğrafları link ile gönderirim — indirmesi ve paylaşması kolay.',
+    locEyebrow:'Lokasyonlar', locTitle:'Nerede çekiyoruz', locLead:'Günün her saatinde güzel olan yerleri biliyorum. Otelinizin yanında da çekim yapabiliriz.',
+    l1:'Apollon Tapınağı, Side', l2:'Eski şehir', l3:'Deniz kenarındaki kayalar', l4:'Antik kalıntılar', l5:'Stüdyo',
+    stepsEyebrow:'Nasıl çalışıyorum', stepsTitle:'Başvurudan hazır fotoğraflara',
+    st1t:'WhatsApp\'tan yazın', st1p:'Nasıl bir çekim istediğinizi ve tarihleri anlatın.',
+    st2t:'Tarih ve yer seçimi', st2p:'En iyi ışığa göre lokasyon ve saat seçer, kıyafet önerileri veririm.',
+    st3t:'Çekim', st3p:'Rahat ve keyifli — çekim boyunca size yol gösteririm.',
+    st4t:'Hazır fotoğraflar', st4p:'Düzenlenmiş kareleri online galeri olarak alırsınız.',
+    faqEyebrow:'Sorular', faqTitle:'Sık sorulan sorular',
+    q1:'Hiç poz vermedim. Olur mu?', a1:'Evet. Müşterilerimin çoğu ilk kez çekim yaptırıyor. Her hareketi gösteririm; en canlı kareler pozların arasında çıkar.',
+    q2:'Ne zaman çekmek daha iyi?', a2:'Yazın sabah erken veya gün batımından 1,5–2 saat önce: yumuşak ışık ve daha az turist. Kesin saati lokasyona göre seçerim.',
+    q3:'Otelimize gelebilir misiniz?', a3:'Evet, Side, Mahmutlar ve Alanya\'da, izin verilirse otel alanında da çekim yapıyorum.',
+    q4:'Ne giymeliyim?', a4:'Açık renk düz kıyafetler en iyi görünür: beyaz, bej, pastel. Çekimden önce kıyafet önerileri gönderirim.',
+    q5:'Tarih nasıl ayırtılır?', a5:'WhatsApp\'tan yazın — müsait tarihleri ve fiyatı söyleyeyim, saatinizi ayıralım.',
+    contEyebrow:'Randevu', contTitle:'Hikayenizi birlikte çekelim', contLead:'WhatsApp\'tan yazın — müsait tarihleri söyler, lokasyon seçmenize yardımcı olurum.',
+    area:'Side · Mahmutlar · Alanya', foot:'© 2026 Darya — Side\'de fotoğrafçı'
+  }
+};
+const msg = {ru:'Здравствуйте, Дарья! Хочу фотосессию в Сиде.', tr:'Merhaba Darya! Side\'de fotoğraf çekimi istiyorum.'};
+const ru = {};
+document.querySelectorAll('[data-i]').forEach(el => { ru[el.dataset.i] = el.innerHTML; });
+T.ru = ru;
+function setLang(l){
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-i]').forEach(el => { const v = T[l][el.dataset.i]; if (v) el.innerHTML = v; });
+  document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
+  document.querySelectorAll('.wa-link').forEach(a => a.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg[l]));
+  try { localStorage.setItem('lang', l); } catch(e) {}
+}
+document.querySelectorAll('.lang button').forEach(b => b.onclick = () => setLang(b.dataset.lang));
+let saved = 'ru'; try { saved = localStorage.getItem('lang') || 'ru'; } catch(e) {}
+setLang(saved);
+
+const hdr = document.getElementById('hdr');
+const onScroll = () => hdr.classList.toggle('solid', scrollY > 60);
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+document.querySelectorAll('.filters button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.filters button').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('.grid figure').forEach(f => f.classList.toggle('hide', b.dataset.f !== 'all' && f.dataset.c !== b.dataset.f));
+});
+
+const lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+let cur = 0;
+const visible = () => [...document.querySelectorAll('.grid figure:not(.hide) img')];
+const show = i => { const v = visible(); cur = (i + v.length) % v.length; lbImg.src = v[cur].src; lbImg.alt = v[cur].alt; };
+document.querySelectorAll('.grid figure').forEach(f => f.onclick = () => { show(visible().indexOf(f.querySelector('img'))); lb.classList.add('open'); });
+lb.querySelector('.x').onclick = () => lb.classList.remove('open');
+lb.querySelector('.prev').onclick = e => { e.stopPropagation(); show(cur - 1); };
+lb.querySelector('.next').onclick = e => { e.stopPropagation(); show(cur + 1); };
+lb.onclick = e => { if (e.target === lb) lb.classList.remove('open'); };
+addEventListener('keydown', e => { if (!lb.classList.contains('open')) return; if (e.key === 'Escape') lb.classList.remove('open'); if (e.key === 'ArrowLeft') show(cur - 1); if (e.key === 'ArrowRight') show(cur + 1); });
+
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
